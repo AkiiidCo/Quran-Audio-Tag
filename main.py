@@ -1,9 +1,14 @@
 import os
 import eyed3
+import sys
 
-folder = "./Audio/Quran-Mishary Alafasy"
-artist = "Mishary Alafasy"
-album = "Quran Mishary Alafasy"
+# Fallback to default options
+if len(sys.argv) < 4:
+    sys.argv = ["main.py", "./Audio", "Mishary Alafasy", "Quran Mishary Alafasy"]
+
+folder = sys.argv[1]
+artist = sys.argv[2]
+album = sys.argv[3]
 
 titles = {
     "001": "001 Al-Fatiha",
